@@ -220,10 +220,14 @@ header {
     }
 
     .header__listBlock{
-        display: flex;
-        align-items: center;
         position: unset;
         background: unset;
+    }
+    
+    .header__list {
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
 
     .header__burgerMenu {
