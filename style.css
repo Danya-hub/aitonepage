@@ -1,4 +1,5 @@
 * {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -73,19 +74,18 @@ header {
     height: 1px;
 }
 
-.header__list {
-    display: none;
+.header__listBlock{
+    position: absolute;
     background: #ffff;
-    transition: 2s;
+    transition: .2s;
     width: 100%;
+    height: 0;
     top: 5.9em;
     left: 0;
     z-index: 999;
 }
 
-.burgerMenuHeight {
-    display: block;
-    position: absolute;
+.burgerActive {
     animation: grow .2s linear 1;
     animation-fill-mode: forwards;
 }
@@ -102,6 +102,29 @@ header {
     100% {
         height: 320px;
     }
+}
+
+.burgerNot-active {
+    animation: decrease .2s linear 1;
+    animation-fill-mode: backwards;
+}
+
+@keyframes decrease {
+    0% {
+        height: 320px;
+    }
+
+    50% {
+        height: 160px;
+    }
+
+    100% {
+        height: 0px;
+    }
+}
+
+.header__list {
+    display: none;
 }
 
 .header__list-item {
@@ -196,7 +219,7 @@ header {
         border: unset;
     }
 
-    .header__list {
+    .header__listBlock{
         display: flex;
         align-items: center;
         position: unset;
