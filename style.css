@@ -12,6 +12,7 @@ img {
     width: 100vw;
 }
 
+input,
 button {
     outline: unset;
     border: unset;
@@ -22,7 +23,7 @@ button {
 
 header {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .header {
@@ -74,7 +75,7 @@ header {
     height: 1px;
 }
 
-.header__listBlock{
+.header__listBlock {
     position: absolute;
     background: #ffff;
     transition: .2s;
@@ -95,10 +96,6 @@ header {
         height: 0px;
     }
 
-    50% {
-        height: 160px;
-    }
-
     100% {
         height: 320px;
     }
@@ -112,10 +109,6 @@ header {
 @keyframes decrease {
     0% {
         height: 320px;
-    }
-
-    50% {
-        height: 160px;
     }
 
     100% {
@@ -158,7 +151,7 @@ header {
 
 .headerInfo {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
     height: 100vh;
 }
@@ -177,20 +170,75 @@ header {
     opacity: 0;
 }
 
-.headerInfo--slide-img {
-    width: 100vw;
-    height: 100vh;
+.headerInfo__slider-slide {
+    display: flex;
 }
 
-.headerFirstImg {
+.slide-img {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 9em;
+}
+
+.headerInfo--slide-firstImg {
     background: url(./assets/womenKeepTel.jpg) center no-repeat;
     background-size: cover;
 }
 
-.headerSecondImg {
+.headerInfo--slide-secondImg {
     background: url(./assets/clockInHand.jpg) center no-repeat;
     background-size: cover;
 }
+
+.headerInfo--slide-info {
+    position: absolute;
+    width: 595px;
+    height: 325px;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* .headerFirstImg {
+    background: url(./assets/womenKeepTel.jpg) center no-repeat;
+    background-size: cover;
+} */
+
+/* .widthHeaderFirstImg {
+    animation: noneWidth .5s;
+    animation-fill-mode: backwards;
+} */
+
+/* @keyframes noneWidth {
+    0% {
+        width: 100vw;
+    }
+    100% {
+        width: 0px;
+    }
+} */
+
+/* .widthHeaderSecondImg {
+    animation: activeWidth .5s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes activeWidth {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 100vw;
+    }
+} */
+
+/* .headerSecondImg {
+    background: url(./assets/clockInHand.jpg) center no-repeat;
+    background-size: cover;
+} */
 
 .headerInfo__slides-form {
     position: absolute;
@@ -204,10 +252,11 @@ header {
     height: 10px;
     margin: 0 5px;
     cursor: pointer;
+    -webkit-appearance: unset;
 }
 
-.haederInfo--navigation-button:focus {
-    background: #ffff;
+input:checked {
+    background-color: #fff;
     transform: scale(1.2);
 }
 
@@ -219,11 +268,11 @@ header {
         border: unset;
     }
 
-    .header__listBlock{
+    .header__listBlock {
         position: unset;
         background: unset;
     }
-    
+
     .header__list {
         display: flex;
         align-items: center;
